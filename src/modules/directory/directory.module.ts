@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DirectoryComponent } from './directory/directory.component';
+import { DirectoryComponent } from './directory.component';
 
 
 
