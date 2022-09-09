@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DirectoryConfigComponent } from './directory-config.component';
+import { DirectoryConfigComponent } from './directory-config/directory-config.component';
 
 
 
@@ -10,6 +10,9 @@ import { DirectoryConfigComponent } from './directory-config.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    DirectoryConfigComponent
   ]
 })
 export class DirectoryConfigModule { }
