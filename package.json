@@ -6,11 +6,14 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "start-server-and-test ci:start-server http://localhost:4200 cy:run",
     "deploy": "ng b --configuration production --base-href https://ChrisCodingGitHub.github.io/angular-directory-demo/ && npx ngh --dir=dist/angular-directory-demo",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "ci:start-server": "angular-http-server --path ./dist/angular-directory-demo -p 4200",
+    "cy:run": "cypress run --headless --browser chrome",
+    "ci:cy-run": "start-server-and-test ci:start-server http://localhost:4200 cy:run"
   },
   "private": true,
   "dependencies": {
@@ -33,13 +36,15 @@
     "@cypress/schematic": "^2.1.1",
     "@types/jasmine": "~4.0.0",
     "angular-cli-ghpages": "^1.0.3",
+    "angular-http-server": "^1.11.0",
+    "cypress": "latest",
     "jasmine-core": "~4.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.7.2",
-    "cypress": "latest"
+    "start-server-and-test": "^1.14.0",
+    "typescript": "~4.7.2"
   }
 }
